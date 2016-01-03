@@ -1,0 +1,22 @@
+{
+  "name": "frequency-message-generator",
+  "homepage": "https://github.com/raphaelduartepinheiro/frequency-message-generator",
+  "authors": [
+    "Raphael D. Pinheiro <raphaklaus@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "skeleton": "~2.0.4",
+    "timbre.js": "timbre#~14.11.25"
+  }
+}
