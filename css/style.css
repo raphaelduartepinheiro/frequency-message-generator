@@ -1,22 +1,63 @@
+body{
+	font-family: 'OpenSans';
+}
+
 #header{
+	background-color: #5B8930;	
+}
+
+.container{
 	display: flex;
+	padding-top: 40px;
+	padding-bottom: 60px;
 	justify-content: center;
 	align-items: center;
-	/*height: 30vh;*/
-	background-color: #34495e;
+	flex-direction: column;
+	width: 100%;
 	color: white;
 }
 
-#header > h3{
-	padding-top: 15vh;
-	padding-bottom: 15vh;
-	text-shadow: 3px 3px #111;
+.container > h3{
+	margin: 0;
+}
+
+.container > h3,h4{
+	color: #EFEFEF;
+	text-align: center;
+	/*text-shadow: 3px 3px #111;*/
+}
+
+.container > small{
+	word-break: break-word;
+	color: #EFEFEF;
 }
 
 #section{
-	display: flex;
-	justify-content: center;
-	align-items: center;	
-	height: 70vh;
-	background-color: #34495e;
+	background-color: #6B9362;
+	border-top: 2px solid #54804A;
+}
+
+.container > h4{
+	text-align: center;
+	color: #9FC1A2;
+}
+
+textarea{
+	width: 70%;
+}
+
+form{
+	width: 80%;
+}
+
+input[type="submit"]{
+	color: white;
+    background-color: #74A546;
+    border-color: #5B8930;
+}
+
+input[type="submit"]:hover{
+	color: white;
+    background-color: #87BD54;
+    border-color: #5B8930;
 }

@@ -4,18 +4,31 @@
 	<title>Frequency Message Generator</title>
 	<link rel="stylesheet" type="text/css" href="lib/skeleton/css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="lib/skeleton/css/skeleton.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts/font-face.css">
+	<link rel="stylesheet" type="text/css" href="lib/components-font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="lib/timbre.js/timbre.dev.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/generator.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 
-	<div id="header" class="">
-			<h3>Generator</h3>	
+	<div id="header">
+		<div class="container">
+			<i class="fa fa-music fa-5x"></i>
+			<h3>Frequency Message Generator</h3>
+			<h4>Convert a text into frequency alphabet</h4>
+			<form>
+				<textarea class="u-full-width" placeholder="Write a message or a link (limit of 140 characters)"></textarea>
+				<input class="button-play u-full-width" type="submit" value="Play">
+			</form>		
+		</div>
 	</div>
 
 	<div id="section">
-		<h3>teste</h3>
+		<div class="container">
+			<h4>Generated tone for debugging:</h4>
+			<small>400|380|440|123|400|380|440|123|400|380|440|123|400|380|440|123|400|380|440|123|400|380|440|123|400|380|440|123|400|380|440|123|400|380|440|123|400|380|440|123|400|380|440|123|400|380|440|123|400|380|440|123|</small>
+		</div>
 	</div>
 <script>
 	// T("square").play();
