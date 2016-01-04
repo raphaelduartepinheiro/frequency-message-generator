@@ -1,15 +1,16 @@
 body{
 	font-family: 'OpenSans';
+	/*background-color: #6B9362;*/
 }
 
-#header{
+header{
 	background-color: #5B8930;	
 }
 
 .container{
 	display: flex;
 	padding-top: 40px;
-	padding-bottom: 60px;
+	padding-bottom: 20px;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
@@ -21,10 +22,13 @@ body{
 	margin: 0;
 }
 
-.container > h3,h4{
+.container > p{
+	color: #9FC1A2;
+}
+
+.container > h3, h4{
 	color: #EFEFEF;
 	text-align: center;
-	/*text-shadow: 3px 3px #111;*/
 }
 
 .container > small{
@@ -32,9 +36,13 @@ body{
 	color: #EFEFEF;
 }
 
-#section{
+section{
 	background-color: #6B9362;
 	border-top: 2px solid #54804A;
+}
+
+section > .container > h4{
+	/*margin: 0;*/
 }
 
 .container > h4{
@@ -44,6 +52,7 @@ body{
 
 textarea{
 	width: 70%;
+	color: black;
 }
 
 form{
@@ -56,7 +65,7 @@ input[type="submit"]{
     border-color: #5B8930;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover,input[type="submit"]:focus{
 	color: white;
     background-color: #87BD54;
     border-color: #5B8930;
