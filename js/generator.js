@@ -6,7 +6,6 @@ app.service('HtmlUtility', function () {
         for (var i = string.length - 1; i >= 0; i--) {
             resultString.unshift(['&#', string[i].charCodeAt(), ';'].join(''));
         }
-        console.log(resultString);
         return resultString;
     }
 });
@@ -33,56 +32,50 @@ app.service('FrequencyGenerator', function () {
             if (i < array.length - 1)
                 frequencies.push(440);
         };
-        console.log(frequencies);
+        
         return frequencies;
     }   
 
-    this.playSound = function(frequencies){
-// var table = frequencies;
-// var synth = T("square", {freq:table});
-// var env   = T("perc", synth).bang();
-
-// var interval = T("interval", {interval:1000}, function(count) {
-//   if (count === 3) {
-//     interval.stop();
-//   }
-//   env.bang();
-// }).set({buddies:synth}).start();
-
+    this.playSound = function(frequencies, callback){
         var freqs = T(function(count) {
+          if (count == frequencies.length){
+              env.pause();
+              callback();
+          }
+
           return frequencies[count % frequencies.length];
-        });        
-        var osc = T("square", {freq:freqs}).on("ended", function() {
-    this.pause();
-});
-        var env = T("perc", osc).bang();
+        });
 
-        var interval = T("param", {value:100});
+        var osc = T("square", {freq:freqs});
+        var env = T("perc", osc).play();
 
-var interval = T("interval", {interval:interval}, freqs, env).start();
-        env.play();
+        var interval = T("param", {value:20})
 
-//         T("interval", {interval:interval},  function(count) {
-//   if (count === 1) {
-//     interval.stop();
-//   }
-//  env.bang();
-// }, freqs, env).start().play();
-        // T("square", {frequency: freqs}).play();
+        var interval = T("interval", {interval:interval}, freqs, env).start();
     }
 });
 
 app.controller('MainCtrl', function ($scope, HtmlUtility, FrequencyGenerator) {
     $scope.generated = false;
+    $scope.playButtonEnabled = true;
 
-    var convert = function(){
+    var convert = function(callback){
         var charCodes = HtmlUtility.htmlEncode($scope.message);
         var frequencies = FrequencyGenerator.generateMessage(charCodes);
-        FrequencyGenerator.playSound(frequencies);
+        $scope.debugFrequencies = frequencies.join('|');
+        FrequencyGenerator.playSound(frequencies, callback);
     }
 
     $scope.generate = function(){
-        $scope.generated = true;
-        convert();
+        $scope.playButtonEnabled = false;
+
+        if ($scope.message != undefined){
+            convert(function(){
+                $scope.playButtonEnabled = true;
+                $scope.$apply();
+            });
+            
+            $scope.generated = true;
+        }
     }
 });

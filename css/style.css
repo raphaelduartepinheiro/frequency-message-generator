@@ -1,13 +1,10 @@
 body{
 	font-family: 'OpenSans';
-	/*background-color: #6B9362;*/
+	background-color: #74A546;
 }
 
 header{
 	background-color: #5B8930;	
-}
-
-.container{
 	display: flex;
 	padding-top: 40px;
 	padding-bottom: 20px;
@@ -18,36 +15,41 @@ header{
 	color: white;
 }
 
-.container > h3{
-	margin: 0;
-}
-
-.container > p{
-	color: #9FC1A2;
-}
-
-.container > h3, h4{
-	color: #EFEFEF;
+header > h3{
+	color: #DCDEDD;
 	text-align: center;
 }
 
-.container > small{
-	word-break: break-word;
-	color: #EFEFEF;
+header > h4{
+	text-align: center;
+	color: #9FC1A2;
+}
+
+header > p{
+	color: #9FC1A2;
+	text-align: center;
+}
+
+header > form > p{
+	color: #9FC1A2;
 }
 
 section{
-	background-color: #6B9362;
-	border-top: 2px solid #54804A;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;	
+	padding: 30px;
+	background-color: #74A546;
+	border-top: 1px solid #4B6B43;
+	color: #F2F9F5;
+	text-align: center;	
 }
 
-section > .container > h4{
-	/*margin: 0;*/
-}
-
-.container > h4{
+section > small{
+	color: #DCDEDD;
 	text-align: center;
-	color: #9FC1A2;
+	word-break: break-word;
 }
 
 textarea{
@@ -68,5 +70,12 @@ input[type="submit"]{
 input[type="submit"]:hover,input[type="submit"]:focus{
 	color: white;
     background-color: #87BD54;
+    border-color: #5B8930;
+}
+
+input[type="submit"]:disabled{
+	color: white;
+	cursor: not-allowed;
+    background-color: #A1D471;
     border-color: #5B8930;
 }
