@@ -70,6 +70,7 @@ app.controller('MainCtrl', ['$scope', 'HtmlUtility', 'FrequencyGenerator', funct
         $scope.playButtonEnabled = false;
 
         if ($scope.message != undefined){
+            ga('send', 'event', 'Generate', 'play', 'Played a message');
             convert(function(){
                 $scope.playButtonEnabled = true;
                 $scope.$apply();
