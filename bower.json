@@ -17,6 +17,8 @@
   ],
   "dependencies": {
     "skeleton": "~2.0.4",
-    "timbre.js": "timbre#~14.11.25"
+    "timbre.js": "timbre#~14.11.25",
+    "angular": "angularjs#~1.4.8",
+    "components-font-awesome": "~4.5.0"
   }
 }

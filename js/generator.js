@@ -32,7 +32,7 @@ app.service('FrequencyGenerator', function () {
             if (i < array.length - 1)
                 frequencies.push(440);
         };
-        
+
         return frequencies;
     }   
 
@@ -55,7 +55,7 @@ app.service('FrequencyGenerator', function () {
     }
 });
 
-app.controller('MainCtrl', function ($scope, HtmlUtility, FrequencyGenerator) {
+app.controller('MainCtrl', ['$scope', 'HtmlUtility', 'FrequencyGenerator', function ($scope, HtmlUtility, FrequencyGenerator) {
     $scope.generated = false;
     $scope.playButtonEnabled = true;
 
@@ -78,4 +78,4 @@ app.controller('MainCtrl', function ($scope, HtmlUtility, FrequencyGenerator) {
             $scope.generated = true;
         }
     }
-});
+}]);
