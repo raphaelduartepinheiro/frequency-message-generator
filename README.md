@@ -1,6 +1,6 @@
 # Frequency Message Generator
 
-Check it: [Live version](http://raphaelduartepinheiro.github.io/frequency-message-generator/)
+Check it: [Live version](http://raphaklaus.github.io/frequency-message-generator/)
 
-This repo is based on [Frequency Communication Thesis](https://github.com/raphaelduartepinheiro/frequency-communication-thesis) 
+This repo is based on [Frequency Communication Thesis](https://github.com/raphaklaus/frequency-communication-thesis) 
 specifications
